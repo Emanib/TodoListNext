@@ -1,5 +1,5 @@
 
-import Followers from '../../components/Followers'
+import Followers from '../../components/Follower/Followers'
 export default function index({results})
 {
     console.log(results)
