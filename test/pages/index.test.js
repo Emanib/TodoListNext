@@ -9,5 +9,6 @@ describe("Todo page", () => {
     const heading = screen.getByText(textToFind);
 
     expect(heading).toBeInTheDocument();
-  });
+  })
 });
+    
