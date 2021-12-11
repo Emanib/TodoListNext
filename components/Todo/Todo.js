@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import styles from "./Todo.module.css";
+import TodoFooter from '../Footer/TodoFooter'
 export default function Todo() {
     const [state, setState] = useState("")
     const [items,setItems] =useState([])
@@ -50,11 +52,11 @@ export default function Todo() {
  
     return (
         <div> 
-            <h1>   Hello World! </h1>
           
-        <form>
-            <input type="text" placeholder="enter value" onChange = {(e)=> setState(e.target.value)} />
-                <button onClick={handleSubmit}> Add </button>
+          
+        <form className = {styles.form}>
+            <input type="text" placeholder="enter value" onChange = {(e)=> setState(e.target.value)} className={styles.inputContainer} />
+                <button onClick={handleSubmit} className={styles.add} > Add </button>
             </form>
             <ul>
             
@@ -70,7 +72,7 @@ export default function Todo() {
                   
             </li>
           ))}
-          <div>counter : {countTask()} </div>
+          <TodoFooter  numberOfIncompleteTasks = {countTask()}  /> 
             </ul>
             </div>
     )

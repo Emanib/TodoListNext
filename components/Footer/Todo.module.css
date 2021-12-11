@@ -1,0 +1,15 @@
+.todoFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todoFooter p {
+    font-weight: 600;
+    color: grey
+}
+
+.todoFooter a {
+    font-weight: 600;
+    color: grey;
+    text-decoration: none;
+}

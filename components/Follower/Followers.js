@@ -1,14 +1,23 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import styles from "./Follower.module.css";
 export default function Followers({item})
 {
     // console.log( props.results)
     return (
-        <div>
+        <div className={styles.followerslistContainer}>
+                  <div className={styles.followerItem} >
+                        <img src={item.picture.large}/>
+                        <div className={styles.followersDetails}>
+                            <div className={styles.followerItemName}>
+                                <h4>{item.name.first}</h4> <h4>{item.name.last}</h4>
+                            </div>
+                            <p>{item.login.username}</p>
+                        </div>
+                    </div>
           
-          <p> user: {item.name.first}  </p> 
-             <p> gender: {item.gender}  </p> 
-        <img src = {item.picture.large}  width={150} height={150}  alt = "eman"/>   
+           <div className={styles.todoFooter}>
+                <Link href="/" >Go Back</Link>
+            </div>
         </div>
     )
 }
