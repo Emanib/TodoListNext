@@ -14,3 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
+.todo-item-active
+{
+    color:red;
+  text-decoration: line-through;
+
+}
