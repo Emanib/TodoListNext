@@ -4,7 +4,7 @@ export default function Followers({item})
 {
     // console.log( props.results)
     return (
-        <div className={styles.followerslistContainer}>
+        <div className={styles.followerslistContainer} data-testid="follower-card-0">
                   <div className={styles.followerItem} >
                         <img src={item.picture.large}/>
                         <div className={styles.followersDetails}>

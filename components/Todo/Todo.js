@@ -53,7 +53,9 @@ export default function Todo() {
     return (
         <div> 
           
-          
+      <h1 className={styles.title}>
+        Welcome to <a href="https://nextjs.org">Next.js!</a>
+      </h1>
         <form className = {styles.form}>
             <input type="text" placeholder="enter value" onChange = {(e)=> setState(e.target.value)} className={styles.inputContainer} />
                 <button onClick={handleSubmit} className={styles.add} > Add </button>
