@@ -1,62 +1,17 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+
+/**
+ * @jest-environment jsdom
+ */
 import Todo from '../Todo'
-// const mockedCallback = jest.fn()
-describe(' Todo',  function () {
-    it('should render input', async function () {
+import {act, fireEvent, render, screen} from "@testing-library/react";
+
+    it('should input todo handle onChange', async function () {
         render(<Todo 
            />)
             const inputElement=screen.getByPlaceholderText("enter value")
-        expect(inputElement).toBeInTheDocument()
-    });
-
-    it('should input handle onChange', async function () {
-        render(<Todo 
-          />)
-            const inputElement=screen.getByPlaceholderText("enter value")
         fireEvent.click(inputElement)
         fireEvent.change(inputElement, {target:{
-            value:"eman"
+            value:"Eman"
             }})
-        expect(inputElement.value).toBe("eman")
+        expect(inputElement.value).toBe("Eman")
     });
-
-    it('should render button', async function () {
-        render(<Todo />)
-            const buttonElement=screen.getByRole("button", {
-                name:/Add/i
-            })
-        expect(buttonElement).toBeInTheDocument()
-    });
-
-    it('should button handle onClick', async function () {
-        render(<Todo />)
-            const buttonElement=screen.getByRole("button", {
-                name:/Add/i
-            })
-
-        fireEvent.click(buttonElement)
-        // expect(mockedCallback).toBeCalled()
-    });
-
-    it('should button handle onClick', async function () {
-        render(<Todo 
-            />)
-
-        const inputElement=screen.getByPlaceholderText("enter value")
-        fireEvent.click(inputElement)
-        fireEvent.change(inputElement, {target:{
-                value:"Eman"
-            }})
-        expect(inputElement.value).toBe("eman")
-
-            const buttonElement=screen.getByRole("button", {
-                name:/Add/i
-            })
-
-        act(()=>{
-            fireEvent.click(buttonElement)
-        })
-        // expect(mockedCallback).toBeCalled()
-        expect(inputElement.value).toBe("")
-    });
-})
